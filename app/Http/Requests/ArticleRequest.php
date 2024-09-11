@@ -11,7 +11,7 @@ class ArticleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class ArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|max:20|unique:articles',
+            'title' => 'required|max:20|unique:articles,title',
             'body' => 'required|min:5',
         ];
     }
